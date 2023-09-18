@@ -8,11 +8,13 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <link href="assets/img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
@@ -22,7 +24,7 @@
 </head>
 
 <body>
-    
+
 
 
     <!-- Navbar Start -->
@@ -36,41 +38,41 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="" class="nav-item nav-link active">Home</a>
-                <a href="" class="nav-item nav-link">About</a>
+                <a href="{{ route('progress.index') }}" class="nav-item nav-link">Progress</a>
                 @yield('navbar')
-                
-                    
+
+
             </div>
-            
-                <x-dropdown align="right" width="55">
-                    <x-slot name="trigger">
-                        <button>
-                            <div>{{ Auth::user()->name }}</div>
 
-                        </button>
-                    </x-slot>
+            <x-dropdown align="right" width="55">
+                <x-slot name="trigger">
+                    <button>
+                        <div>{{ Auth::user()->name }}</div>
 
-                    <x-slot name="content">
-                      
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                    </button>
+                </x-slot>
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                <x-slot name="content">
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-                </a></a>
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                </x-slot>
+            </x-dropdown>
+            </a></a>
         </div>
     </nav>
     <!-- Navbar End -->
 
     @yield('content')
-    
-        
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -85,7 +87,8 @@
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -111,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="container">

@@ -10,6 +10,8 @@ class HomeController extends Controller
     
     public function index()
     {
+
+        
         $user = Auth::user();
         if ($user) {
             if ($user->account_type === 'Teacher') {

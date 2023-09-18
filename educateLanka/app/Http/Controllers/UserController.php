@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClassModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -74,7 +75,18 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
     }
 
+    public function dropdownMenu()
+    {
+        $teachers = User::where('account_type', 'Teacher')->get();
+
+        return view('admin.class.add', compact('teachers'));
+    }
+
+    public function classes()
+    {
+        return $this->belongsToMany(ClassModel::class, 'class_user', 'user_id', 'class_id');
+    }
+
+
     // Other methods (create, store, etc.) can also be implemented here if needed.
 }
-
-

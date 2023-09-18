@@ -15,7 +15,8 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Educate Lanka</a>
+            <a class="navbar-brand ps-3" href="{{ url('/redirects') }}">Educate Lanka</a>
+            
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -44,5 +45,8 @@
                 </footer>
             </div>
         </div>
+        <script>
+  
+</script>
     </body>
 </html>

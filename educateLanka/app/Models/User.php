@@ -16,7 +16,13 @@ class User extends Authenticatable
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
+     * 
+     * 
      */
+
+
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'email',
@@ -24,6 +30,7 @@ class User extends Authenticatable
         'password',
         'account_type',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,4 +50,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // User.php model
+    public function classes()
+    {
+        return $this->belongsToMany(ClassModel::class, 'class_user', 'user_id', 'class_id');
+    }
 }
